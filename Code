@@ -1,0 +1,23 @@
+def typing_test(sentence, user_input):
+    # split the sentence and user input into words
+    words = sentence.split()
+    input_words = user_input.split()
+    
+    # keep track of the number of correct words
+    correct_words = 0
+    
+    # iterate through each word in the sentence
+    for i, word in enumerate(words):
+        if i < len(input_words) and word == input_words[i]:
+            correct_words += 1
+            
+    # calculate the accuracy as a percentage
+    accuracy = (correct_words / len(words)) * 100
+    
+    return accuracy
+
+sentence = "the quick brown fox jumps over the lazy dog"
+user_input = "the quick brown fox jumps over the lazy"
+
+accuracy = typing_test(sentence, user_input)
+print("Accuracy: {:.2f}%".format(accuracy))
